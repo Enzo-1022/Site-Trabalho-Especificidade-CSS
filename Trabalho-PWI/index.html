@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Especificidade CSS</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container-header">
+            <div class="box-header01">
+                <img src="imgs/imgs-header/menu.png" alt="menu">
+                <h3>menu</h3>
+            </div>
+            <div class="box-header02">
+                <h1>Especificidade CSS.</h1>
+            </div>
+        </div>
+    </header>
+
+    <nav id="nav">
+        <ul class="ul-nav">
+            <li><a href="#secao-oq-especificidade" id="link-oq-especificidade" class="link-hover">O que é a especificidade no CSS?</a></li>
+            <li><a href="#secao-hierarquia-especificidade" id="link-Hierarquia-especificidade" class="link-hover">Hierarquia de Especificidade</a></li>
+            <li><a href="#secao-calculo-especificidade" id="link-como-calcular-especificidade" class="link-hover">Como calcular a especificidade?</a></li>
+            <li><a href="#secao-seletores-css" id="link-seletores-css" class="link-hover">Seletores CSS</a></li>
+            <li><a href="#secao-elementos-simples-css" id="link-seletor-elementos-sim" class="link-hover">Seletor de elementos simples</a></li>
+            <li><a href="#secao-seletor-id" id="link-seletor-id" class="link-hover">Seletor id</a></li>
+            <li><a href="#secao-seletor-classe" id="link-seletor-class" class="link-hover">Seletor class</a></li>
+            <li><a href="#secao-seletor-combinador01" id="link-seletores-combinatorios" class="link-hover">Seletores combinadores</a></li>
+            <li><a href="#secao-seletor-combinador02" id="link-seletor-descendente" class="link-hover">Seletor descendente</a></li>
+            <li><a href="#secao-seletor-combinador03" id="link-seletor-filho" class="link-hover">Seletor filho (&gt;)</a></li>
+            <li><a href="#secao-seletor-combinador04" id="link-seletor-irmaos-adjacentes" class="link-hover">Seletor de irmãos adjacentes (+)</a></li>
+            <li><a href="#secao-seletor-combinador05" id="link-seletor-geral-irmaos" class="link-hover">Seletor geral de irmãos (~)</a></li>
+            <li><a href="#secao-pseudoclasses01" id="link-pseudoclasses" class="link-hover">Pseudo-classes</a></li>
+            <li><a href="#secao-pseudoclasses02" id="link-pseudo-hover" class="link-hover">:hover</a></li>
+            <li><a href="#secao-pseudoclasses03" id="link-pseudo-link" class="link-hover">:link</a></li>
+            <li><a href="#secao-pseudoclasses04" id="link-pseudo-visited" class="link-hover">:visited</a></li>
+            <li><a href="#secao-pseudos-elementos01" id="link-pseudoelementos" class="link-hover">O que são pseudoelementos?</a></li>
+            <li><a href="#secao-pseudos-elementos02" id="link-pseudoelem-first-line" class="link-hover">::first-line</a></li>
+            <li><a href="#secao-pseudos-elementos03" id="link-pseudoelem-first-letter" class="link-hover">::first-letter</a></li>
+            <li><a href="#secao-pseudos-elementos04" id="link-pseudoelem-marker" class="link-hover">::marker</a></li>
+            <li><a href="#secao-seletor-atributo01" id="link-seletor-de-atributos01" class="link-hover">Seletor de [atributo] CSS</a></li>
+            <li><a href="#secao-seletor-atributo02" id="link-seletor-de-atributos02" class="link-hover">Seletor CSS [atributo = "valor"]</a></li>
+            <li><a href="#secao-seletor-atributo03" id="link-seletor-de-atributos03" class="link-hover">Seletor CSS [atributo~="valor"]</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="cor-fundo-section">
+
+            <div id="secao-oq-especificidade">
+                <h2>O que é a especificidade no CSS? </h2>
+                <p>A especificidade no CSS, é o que define o quão especifico um seletor CSS é, portanto quanto mais específico, ele possui prioridade sob os outros.</p> 
+                <p>Por tanto é por meio da especificidade que os navegadores definem quais valores e propriedades CSS serão aplicados há um elemento.</p>
+                <br>
+            </div>
+
+            <div id="secao-hierarquia-especificidade">
+                <h2>Hierarquia de Especificidade</h2>
+                <p>Cada seletor CSS tem seu lugar na hierarquia de especificidade.</p>
+                <p>Existem quatro categorias que definem o nível de especificidade de um seletor:</p>
+
+                <ol>
+                    <li> Estilos embutidos (inline) - Exemplo: &lt;h1 style="color: pink;" &gt;</li>
+                    <li> IDs – Exemplo: #navbar</li>
+                    <li> Classes, pseudoclasses, seletores de atributos - Exemplo: .test, :hover, [href] </li>
+                    <li> Elementos e pseudoelementos - Exemplo: h1, ::before </li>
+                </ol>
+                <br>
+            </div>
+
+            <div id="secao-calculo-especificidade">
+                <h2>Como calcular a especificidade?</h2>
+                <p>Comece em 0, adicione 100 para cada valor de ID, adicione 10 para cada valor de classe (ou pseudoclasse ou seletor de atributos), adicione 1 para cada seletor de elemento ou pseudoelemento, O estilo inline recebe um valor de especificidade de 1000 e sempre recebe a prioridade mais alta!, Há uma exceção a esta regra: se você usar a !important regra, ela substituirá até mesmo os estilos embutidos! </p>
+            
+                <p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Seletor</th>
+                                <th>Valor Especificidade</th>
+                                <th>Calculo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>p</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>p.teste</td>
+                                <td>11</td>
+                                <td>1+10</td>
+                            </tr>
+                            <tr>
+                                <td>p#demonstracao</td>
+                                <td>101</td>
+                                <td>1+100</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;p style="color: pink;"&gt; </td>
+                                <td>1000</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>#demonstracao</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>.teste</td>
+                                <td>10</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>.p.teste1.teste2 </td>
+                                <td>21</td>
+                                <td>1+10+10</td>
+                            </tr>
+                            <tr>
+                                <td>#navbar p#demonstracao</td>
+                                <td>201</td>
+                                <td>100+1+100</td>
+                            </tr>
+                            <tr>
+                                <td>*</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+            
+        </section>
+
+        <section class="cor-fundo-section">
+
+            <div id="secao-seletores-css">
+                <h2>Seletores CSS</h2>
+                <p>Os seletores CSS são usados para “encontrar” (ou selecionar) os elementos HTML que você deseja estilizar. </p>
+                <p>Podemos dividir os seletores CSS em cinco categorias:</p>
+
+                <ul>
+                    <li>Seletores simples (selecione elementos com base no nome, id, classe) </li>
+                    <li>Seletores combinadores (selecionam elementos com base em um relacionamento específico entre eles)</li>
+                    <li>Seletores de pseudoclasse (selecionam elementos com base em um determinado estado) </li>
+                    <li>Seletores de pseudo-elementos (selecionam e estilizam uma parte de um elemento)</li>
+                    <li>Seletores de atributos (selecionam elementos com base em um atributo ou valor de atributo) </li>
+                </ul>
+                <br>
+            </div>
+            
+
+            <div id="secao-elementos-simples-css">
+                <h2>Seletor de elementos CSS simples.</h2>
+                <p>O seletor de elementos seleciona elementos HTML com base no nome (tag name) do elemento.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo01.png" alt="Imagem de Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+        
+            <div id="secao-seletor-id">
+                <h2>Seletor de id CSS.</h2>
+                <p>O seletor de id usa o atributo id de um elemento HTML para selecionar um elemento específico.</p>
+                <p>O id de um elemento é único em uma página, então o seletor de id é usado para selecionar um elemento único!</p>
+                <p>Para selecionar um elemento com um id específico, escreva um caractere hash (#), seguido do id do elemento.</p>
+                <figure class="figure-flex">
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo02(1).png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo02(2).png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <p>Lembrando que para declarar o id de um elemento não podemos utilizar números (apenas no início), <br> caracteres reservados do CSS/HTML (&lt;, &gt;, (), #, . , acentuações nas palavras etc...) também não pode conter espaços entre as palavras.</p>
+                <br>
+            </div>
+
+            <div id="secao-seletor-classe">
+                <h2>Seletor de classe CSS.</h2>
+                <p>O seletor de classe seleciona elementos HTML com um atributo de classe específico.</p>
+                <p>Para selecionar elementos com uma classe específica, escreva um ponto final (.), seguido do nome da classe.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo03.png" alt="" class="imgs-exemplos02">
+                </figure>
+                <p>Quando declaramos uma class também não podemos utilizar números (apenas no início),<br> caracteres reservados do CSS/HTML (&lt;, &gt;, (), #, . , acentuações nas palavras etc...) (fonte pequena como se fosse um comentário)</p>
+                <br>
+
+                <p>Também podemos especificar que apenas alguns elementos HTML específicos devem ser afetados por uma classe, colocando o nome do elemento HTML antes de se referir a class.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo04.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+
+                <p>Além disso podemos declarar mais de uma class para um elemento HTML.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo05.png" alt="Imagem De Exemplo" id="img-exemplo-03">
+                </figure>
+            </div>
+            
+        </section>
+
+        <section class="cor-fundo-section">
+
+            <div id="secao-seletor-combinador01">
+                <h2>Seletores combinadores CSS.</h2>
+                <p>Um seletor CSS pode conter mais de um seletor simples. Entre os seletores simples podemos incluir um combinador.</p>
+                <br>
+
+                <p>Existem quatro combinadores diferentes em CSS:</p>
+                <ul>
+                    <li>seletor descendente (espaço)</li>
+                    <li>seletor filho (&gt;)</li>
+                    <li>seletor de irmão adjacente (+)</li>
+                    <li>seletor geral de irmãos (~)</li>
+                </ul>
+                <br>
+            </div>
+            
+            <div id="secao-seletor-combinador02">
+                <h2>Seletor Descendente</h2>
+                <p>O seletor descendente corresponde a todos os elementos descendentes de um elemento especificado.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo19.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+            
+            <div id="secao-seletor-combinador03">
+                <h2>Seletor filho (&gt;)</h2>
+                <p>O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo09.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+            
+            <div id="secao-seletor-combinador04">
+                <h2>Seletor de irmãos adjacentes (+)</h2>
+                <p>O seletor irmão adjacente é usado para selecionar um elemento que está diretamente após outro elemento específico.</p>
+                <p>Os elementos irmãos devem ter o mesmo elemento pai e "adjacente" significa "imediatamente seguinte".</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo10.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+            <div id="secao-seletor-combinador05">
+                <h2>Seletor Geral de Irmãos (~)</h2>
+                <p>O seletor geral de irmãos seleciona todos os elementos que são próximos irmãos de um elemento especificado.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo11.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+        </section>
+
+        <section class="cor-fundo-section">
+
+            <div id="secao-pseudoclasses01">
+                <h2>Pseudo-classes CSS.</h2>
+                <p>Uma pseudo-classe CSS é uma palavra-chave adicionada a seletores que especifica um estado especial do elemento selecionado.</p>
+                <br>
+                <h3>Veja alguns exemplos:</h3>
+                <br>
+            </div>
+
+            <div id="secao-pseudoclasses02">
+                <h2>:hover</h2>
+                <p>A pseudo-classe hover identifica quando o cursor do mouse passa por cima de um elemento, e aplica as propriedades CSS que foram declaradas dentro do bloco da pseudo-classe hover {}.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo12.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+            <div id="secao-pseudoclasses03">
+                <h2>:link</h2>
+                <p>A pseudo-classe link permite que você selecione os links dentro de um elemento.,<br> Ela seleciona todos os links, até mesmo os que não foram visitados, incluindo os links já estilizados em outras classes ou ids ou em até mesmo em outras pseudo-classes, permitindo alterar o estilo desses links.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo13.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+            
+            <div id="secao-pseudoclasses04">
+                <h2>:visited</h2>
+                <p>A pseudo-classe visited serve para aplicar um estilo aos links que já foram visitados pelo usuário. Por questões de privacidade, os estilos que podem ser modificados usando este seletor são muito limitados.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo07.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+        </section>
+
+        <section class="cor-fundo-section">
+            
+            <div id="secao-pseudos-elementos01">
+                <h2>O que são pseudoelementos?</h2>
+                <p>Um pseudoelemento CSS é usado para estilizar partes especificadas de um elemento.</p>
+                <br>
+
+                <h3>Alguns exemplos exemplo:</h3>
+                <br>
+            </div>
+
+            <div id="secao-pseudos-elementos02">
+                <h2>::first-line</h2>
+                <p>O ::first-line pseudoelemento é usado para adicionar um estilo especial à primeira linha de um texto.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo08.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+            <div id="secao-pseudos-elementos03">
+                <h2>::first-letter</h2>
+                <p>O ::first-letter pseudoelemento é usado para adicionar um estilo especial à primeira letra de um texto.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo14.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+            
+            <div id="secao-pseudos-elementos04">
+                <h2>::marker</h2>
+                <p>O ::marker pseudoelemento seleciona os marcadores dos itens da lista.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo15.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+        </section>
+
+        <section class="cor-fundo-section">
+
+            <div id="secao-seletor-atributo01">
+                <h2>Seletor de [atributo] CSS</h2>
+                <p>O [attribute]seletor é usado para selecionar elementos com um atributo especificado.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo16.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+            <div id="secao-seletor-atributo02">
+                <h2>Seletor CSS [atributo = "valor"]</h2>
+                <p>O [attribute="value"] seletor é usado para selecionar elementos com um atributo e valor especificados.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo17.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+
+            <div id="secao-seletor-atributo03">
+                <h2>Seletor CSS [atributo~="valor"]</h2>
+                <p>O [attribute~="value"] seletor é usado para selecionar elementos com um valor de atributo contendo uma palavra especificada.</p>
+                <figure>
+                    <img src="imgs/imagens-de-exemplo/imagem-de-exemplo18.png" alt="Imagem De Exemplo" class="imgs-exemplos">
+                </figure>
+                <br>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <ul class="ul-links-contatos-footer">
+            <li>Autores: Enzo Fernandes Brito e Lucas</li>
+            <li>Data da criação: 18/10/2023</li>
+            <li>Contatos:</li>
+                <ul>
+                    <li>Enzo:</li>
+                    <ul>
+                        <li><a href="mailto:enzofernandes560@gmail.com" target="_blank">Email</a></li>
+                        <li><a href="https://github.com/Enzo-1022" target="_blank">GitHub.</a></li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Lucas:</li>
+                    <ul>
+                        <li>Email:</li>
+                        <li>GitHub:</li>
+                    </ul>
+                </ul>
+        </ul>
+        <ul>
+            <li>Links:</li>
+            <li><a href="https://www.flaticon.com/free-icons/user-interface" title="user interface icons">User interface icons created by Elite Art - Flaticon</a></li>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity " target="_blank">Referencias(1): O que é a especificidade no CSS?; <br> Hierarquia de Especificidade; <br> Como calcular a especificidade? </a></li>
+            <li><a href="https://blog.cod3r.com.br/seletores-especificidade/ " target="_blank">Referencias(2): O que é a especificidade no CSS?; <br> Hierarquia de Especificidade; <br> Como calcular a especificidade? </a></li>
+            <li><a href="https://www.w3schools.com/css/css_specificity.asp" target="_blank">Referencias(3): O que é a especificidade no CSS?;<br> Hierarquia de Especificidade; <br> Como calcular a especificidade? </a></li>
+            <li><a href="https://www.w3schools.com/css/css_selectors.asp#:~:text=The%20CSS%20class%20Selector,followed%20by%20the%20class%20name." target="_blank">Referencias seletores css </a></li>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/:visited " target="_blank">Referencias pseudo-classes</a></li>
+            <li><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">Referencias pseudo-elementos</a></li>
+            <li><a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Referencias seletores de atributos</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

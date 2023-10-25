@@ -33,7 +33,7 @@ nav{
     position: fixed;
     top:40px;
     padding: 10px 0px 10px 0px;
-    width: 150px;
+    width: 155px;
     height: 100% ;
     background-color: gainsboro;
     color: white;
@@ -59,9 +59,7 @@ nav a{
 
 /* Main */
 main{
-    margin-left:155px;
-    margin-right: 5px;
-    margin-top: 45px;
+    margin: 45px 5px 0px 160px;
 }
 tr{
     flex-wrap: wrap;

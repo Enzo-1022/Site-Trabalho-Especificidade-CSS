@@ -113,6 +113,9 @@ footer{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+address{
+    font-style: normal;
+}
 .ul-links-contatos-footer{
     align-self: center;
 }

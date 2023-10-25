@@ -14,54 +14,59 @@ window.addEventListener('scroll', function(){
 
 //Trocar cor do section quando clicar no link
 // links
-const link_oq_especificidade = document.getElementById('link-oq-especificidade')
-const link_Hierarquia_especificidade = document.getElementById('link-Hierarquia-especificidade')
-const link_como_calcular_especificidade = document.getElementById('link-como-calcular-especificidade')
-const link_seletores_css = document.getElementById('link-seletores-css')
-const link_seletor_elementos_sim = document.getElementById('link-seletor-elementos-sim')
-const link_seletor_id = document.getElementById('link-seletor-id')
-const link_seletor_class = document.getElementById('link-seletor-class')
-const link_seletores_combinatorios = document.getElementById('link-seletores-combinatorios')
-const link_seletor_descendente = document.getElementById('link-seletor-descendente')
-const link_seletor_filho = document.getElementById('link-seletor-filho')
-const link_seletor_irmaos_adjacentes = document.getElementById('link-seletor-irmaos-adjacentes')
-const link_seletor_geral_irmaos = document.getElementById('link-seletor-geral-irmaos')
-const link_pseudoclasses = document.getElementById('link-pseudoclasses')
-const link_pseudo_hover = document.getElementById('link-pseudo-hover')
-const link_pseudo_link = document.getElementById('link-pseudo-link')
-const link_pseudo_visited = document.getElementById('link-pseudo-visited')
-const link_pseudoelementos = document.getElementById('link-pseudoelementos')
-const link_pseudoelem_first_line = document.getElementById('link-pseudoelem-first-line')
-const link_pseudoelem_first_letter = document.getElementById('link-pseudoelem-first-letter')
-const link_pseudoelem_marker = document.getElementById('link-pseudoelem-marker')
-const link_seletor_de_atributos01 = document.getElementById('link-seletor-de-atributos01') 
-const link_seletor_de_atributos02 = document.getElementById('link-seletor-de-atributos02') 
-const link_seletor_de_atributos03 = document.getElementById('link-seletor-de-atributos03')
+
+const links = [
+    link_oq_especificidade = document.getElementById('link-oq-especificidade'),
+    link_Hierarquia_especificidade = document.getElementById('link-Hierarquia-especificidade'),
+    link_como_calcular_especificidade = document.getElementById('link-como-calcular-especificidade'),
+    link_seletores_css = document.getElementById('link-seletores-css'),
+    link_seletor_elementos_sim = document.getElementById('link-seletor-elementos-sim'),
+    link_seletor_id = document.getElementById('link-seletor-id'),
+    link_seletor_class = document.getElementById('link-seletor-class'),
+    link_seletores_combinatorios = document.getElementById('link-seletores-combinatorios'),
+    link_seletor_descendente = document.getElementById('link-seletor-descendente'),
+    link_seletor_filho = document.getElementById('link-seletor-filho'),
+    link_seletor_irmaos_adjacentes = document.getElementById('link-seletor-irmaos-adjacentes'),
+    link_seletor_geral_irmaos = document.getElementById('link-seletor-geral-irmaos'),
+    link_pseudoclasses = document.getElementById('link-pseudoclasses'),
+    link_pseudo_hover = document.getElementById('link-pseudo-hover'),
+    link_pseudo_link = document.getElementById('link-pseudo-link'),
+    link_pseudo_visited = document.getElementById('link-pseudo-visited'),
+    link_pseudoelementos = document.getElementById('link-pseudoelementos'),
+    link_pseudoelem_first_line = document.getElementById('link-pseudoelem-first-line'),
+    link_pseudoelem_first_letter = document.getElementById('link-pseudoelem-first-letter'),
+    link_pseudoelem_marker = document.getElementById('link-pseudoelem-marker'),
+    link_seletor_de_atributos01 = document.getElementById('link-seletor-de-atributos01'),
+    link_seletor_de_atributos02 = document.getElementById('link-seletor-de-atributos02'),
+    link_seletor_de_atributos03 = document.getElementById('link-seletor-de-atributos03')
+]
 
 // seções
-const secao_oq_especificidade = document.getElementById('secao-oq-especificidade')
-const secao_hierarquia_especificidade = document.getElementById('secao-hierarquia-especificidade')
-const secao_calculo_especificidade = document.getElementById('secao-calculo-especificidade')
-const secao_seletores_css = document.getElementById('secao-seletores-css')
-const secao_elementos_simples_css = document.getElementById('secao-elementos-simples-css')
-const secao_seletor_id = document.getElementById('secao-seletor-id')
-const secao_seletor_classe = document.getElementById('secao-seletor-classe')
-const secao_seletor_combinador01 = document.getElementById('secao-seletor-combinador01')
-const secao_seletor_combinador02 = document.getElementById('secao-seletor-combinador02')
-const secao_seletor_combinador03 = document.getElementById('secao-seletor-combinador03')
-const secao_seletor_combinador04 = document.getElementById('secao-seletor-combinador04')
-const secao_seletor_combinador05 = document.getElementById('secao-seletor-combinador05')
-const secao_pseudoclasses01 = document.getElementById('secao-pseudoclasses01')
-const secao_pseudoclasses02 = document.getElementById('secao-pseudoclasses02')
-const secao_pseudoclasses03 = document.getElementById('secao-pseudoclasses03')
-const secao_pseudoclasses04 = document.getElementById('secao-pseudoclasses04')
-const secao_pseudos_elementos01 = document.getElementById('secao-pseudos-elementos01')
-const secao_pseudos_elementos02 = document.getElementById('secao-pseudos-elementos02')
-const secao_pseudos_elementos03 = document.getElementById('secao-pseudos-elementos03')
-const secao_pseudos_elementos04 = document.getElementById('secao-pseudos-elementos04')
-const secao_seletor_atributo01 = document.getElementById('secao-seletor-atributo01')
-const secao_seletor_atributo02 = document.getElementById('secao-seletor-atributo02')
-const secao_seletor_atributo03 = document.getElementById('secao-seletor-atributo03')
+const secoes = [
+    secao_oq_especificidade = document.getElementById('secao-oq-especificidade'),
+    secao_hierarquia_especificidade = document.getElementById('secao-hierarquia-especificidade'),
+    secao_calculo_especificidade = document.getElementById('secao-calculo-especificidade'),
+    secao_seletores_css = document.getElementById('secao-seletores-css'),
+    secao_elementos_simples_css = document.getElementById('secao-elementos-simples-css'),
+    secao_seletor_id = document.getElementById('secao-seletor-id'),
+    secao_seletor_classe = document.getElementById('secao-seletor-classe'),
+    secao_seletor_combinador01 = document.getElementById('secao-seletor-combinador01'),
+    secao_seletor_combinador02 = document.getElementById('secao-seletor-combinador02'),
+    secao_seletor_combinador03 = document.getElementById('secao-seletor-combinador03'),
+    secao_seletor_combinador04 = document.getElementById('secao-seletor-combinador04'),
+    secao_seletor_combinador05 = document.getElementById('secao-seletor-combinador05'),
+    secao_pseudoclasses01 = document.getElementById('secao-pseudoclasses01'),
+    secao_pseudoclasses02 = document.getElementById('secao-pseudoclasses02'),
+    secao_pseudoclasses03 = document.getElementById('secao-pseudoclasses03'),
+    secao_pseudoclasses04 = document.getElementById('secao-pseudoclasses04'),
+    secao_pseudos_elementos01 = document.getElementById('secao-pseudos-elementos01'),
+    secao_pseudos_elementos02 = document.getElementById('secao-pseudos-elementos02'),
+    secao_pseudos_elementos03 = document.getElementById('secao-pseudos-elementos03'),
+    secao_pseudos_elementos04 = document.getElementById('secao-pseudos-elementos04'),
+    secao_seletor_atributo01 = document.getElementById('secao-seletor-atributo01'),
+    secao_seletor_atributo02 = document.getElementById('secao-seletor-atributo02'),
+    secao_seletor_atributo03 = document.getElementById('secao-seletor-atributo03')
+]
 
 // Função
 function trocar_cor_section(secao) {
